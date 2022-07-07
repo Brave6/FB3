@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "386598408436",
+    "project_id": "manila-e0dea",
+    "storage_bucket": "manila-e0dea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386598408436:android:9fd2f79d0d926c3186cea1",
+        "android_client_info": {
+          "package_name": "com.aix.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386598408436-14hujm98e0taf1bsu1e47os4iebakdds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsHdbVRg9gW8Adp4BtAqNFGYTVleW6phg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386598408436-14hujm98e0taf1bsu1e47os4iebakdds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386598408436:android:b8a5a885e51bb47586cea1",
+        "android_client_info": {
+          "package_name": "com.e.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386598408436-14hujm98e0taf1bsu1e47os4iebakdds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsHdbVRg9gW8Adp4BtAqNFGYTVleW6phg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386598408436-14hujm98e0taf1bsu1e47os4iebakdds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
