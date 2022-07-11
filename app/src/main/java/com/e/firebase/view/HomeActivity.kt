@@ -1,4 +1,4 @@
-package com.e.firebase.viewmodel
+package com.e.firebase.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.e.firebase.databinding.ActivityHomeBinding
 import com.e.firebase.datamodel.TaskModel
+import com.e.firebase.viewmodel.TaskAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -34,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
         }
         var currentUser = auth.currentUser
 
-        loadAllData(currentUser!!.uid.toString())
+
 
         binding.btnAdd.setOnClickListener {
             var task = binding.etTask.text.toString().trim()
@@ -58,13 +59,6 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
-        //swipe refresh
-        binding.refresh.setOnRefreshListener {
-            if (binding.refresh.isRefreshing) {
-                binding.refresh.isRefreshing = false
-            }
-            loadAllData(currentUser!!.uid)
-        }
 
 
         binding.btnLogout.setOnClickListener {
@@ -79,32 +73,5 @@ class HomeActivity : AppCompatActivity() {
         finish()
     }
 
-    //for laoding all task from server
-    fun loadAllData(userID: String) {
-
-        val taksList = ArrayList<TaskModel>()
-
-        var ref = db.collection("all_tasks")
-        ref.whereEqualTo("userID", userID)
-            .get()
-            .addOnSuccessListener {
-                if (it.isEmpty) {
-                    Toast.makeText(this@HomeActivity, "No Task Found", Toast.LENGTH_SHORT).show()
-                    return@addOnSuccessListener
-                }
-                for (doc in it) {
-                    val taskModel = doc.toObject(TaskModel::class.java)
-                    taksList.add(taskModel)
-                }
-
-                binding.rvToDoList.apply {
-                    layoutManager =
-                        LinearLayoutManager(this@HomeActivity, RecyclerView.VERTICAL, false)
-                    adapter = TaskAdapter(taksList, this@HomeActivity)
-                }
-
-            }
-
     }
 
-}

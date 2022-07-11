@@ -1,4 +1,4 @@
-package com.e.firebase.viewmodel
+package com.e.firebase.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -79,8 +79,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
     fun goToHome() {
         startActivity(Intent(this@MainActivity, HomeActivity::class.java))
         finish()
     }
+
+
+
+
 }
+
+
